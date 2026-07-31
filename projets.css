@@ -1,0 +1,181 @@
+/* ── Réinitialisation ── */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #e8e4d9;
+  font-family: 'Georgia', serif;
+  color: #1a1a1a;
+}
+
+.page-title {
+    position: absolute; /* Changé de fixed à absolute */
+    top: 48px;
+    left: 20px;
+    font-family: 'Arial Black', Impact, sans-serif;
+    font-size: 2.5rem;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: transparent;
+    -webkit-text-stroke: 1.5px #1a1a1a;
+    z-index: 1000;
+    transition: transform 0.3s ease;
+}
+
+.page-title:hover {
+    transform: scale(1.05);
+    -webkit-text-stroke: 2px #1a1a1a;
+}
+/* ── Section globale ── */
+.projets {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 48px 24px 80px;
+}
+
+.projets__titre {
+  font-family: 'Arial Black', 'Arial', sans-serif;
+  font-size: 2rem;
+  font-weight: 900;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  -webkit-text-stroke: 1.5px #1a1a1a;
+  color: transparent;
+  margin-bottom: 48px;
+}
+
+/* ── Liste des projets ── */
+.projets__liste {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  margin-left: 100px;
+}
+
+/* Ligne verticale */
+.projets__liste::before {
+  content: '';
+  position: absolute;
+  left: 100px; 
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background-color: #1a1a1a;
+}
+
+/* ── Carte de projet ── */
+.projet {
+  display: flex;
+  align-items: flex-start;
+  padding: 50px 0;
+  position: relative;
+  width: 100%;
+}
+
+/* ── Index (Numérotation) ── */
+.projet__index {
+  flex-shrink: 0;
+  background-color: #e8e4d9;
+  z-index: 1;
+  width: 100px;
+  display: flex;
+  justify-content: flex-end;
+  padding-right: 20px;
+}
+
+.projet__index-text {
+  font-family: 'Libertinus Keyboard', serif;
+  font-size: 50px;
+  font-weight: 700;
+  color: #1a1a1a;
+}
+
+/* ── Contenu texte ── */
+.projet__contenu {
+  margin-left: 20px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.projet__titre {
+  font-size: 1.55rem;
+  font-family: 'Arial Black', 'Arial', sans-serif;
+  font-weight: 700;
+  margin-bottom: 4px;
+  white-space: nowrap;
+}
+
+.projet__sous-titre {
+  font-size: 0.9rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+  padding-left: 12px;
+  white-space: nowrap;
+}
+
+.projet__description {
+  font-size: 0.82rem;
+  line-height: 1.6;
+  color: #3a3a3a;
+  margin-bottom: 14px;
+  max-width: 600px;
+}
+
+/* ── Badges ── */
+.projet__tags {
+  display: flex;
+  gap: 8px;
+  list-style: none;
+  margin-bottom: 15px;
+  flex-wrap: wrap;
+}
+
+.projet__tags li {
+  background-color: #3b3561;
+  color: white;
+  font-size: 0.65rem;
+  padding: 3px 10px;
+  border-radius: 12px;
+  font-family: 'Arial', sans-serif;
+  letter-spacing: 0.02em;
+}
+
+/* ── Bouton lien ── */
+.projet__lien {
+  margin-top: 10px;
+  align-self: flex-start;
+  font-size: 0.78rem;
+  font-family: 'Arial', sans-serif;
+  color: #1a1a1a;
+  text-decoration: none;
+  border: 1px solid #1a1a1a;
+  padding: 5px 14px;
+  background-color: #e8e4d9;
+  transition: 0.2s;
+}
+
+.projet__lien:hover {
+  background-color: #1a1a1a;
+  color: #e8e4d9;
+}
+
+/* Container de la flèche de scroll */
+.scroll-down-btn {
+    position: fixed;
+    bottom: 40px;
+    right: 40px;
+    z-index: 1000;
+    cursor: pointer;
+    font-size: 2rem;
+    color: #1a1a1a;
+    transition: transform 0.3s ease;
+}
+
+.scroll-down-btn:hover {
+    transform: translateY(5px); /* Petit effet au survol */
+}
