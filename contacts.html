@@ -32,6 +32,44 @@
       </form>
     </div>
   </section>
+<script>
+document.querySelector('.formulaire').addEventListener('submit', async function(e) {
+    e.preventDefault(); // Empêche le rechargement de la page
 
+    const nom = document.getElementById('nom').value;
+    const prenom = document.getElementById('prenom').value;
+    const email = document.getElementById('email').value;
+    const message = document.getElementById('message').value;
+
+    const submitBtn = document.querySelector('.submit-btn');
+    submitBtn.textContent = "Envoi en cours...";
+
+    try {
+        const response = await fetch('TON_URL_WEBHOOK_MAKE_ICI', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({ 
+                nom: nom, 
+                prenom: prenom, 
+                email: email, 
+                message: message 
+            })
+        });
+
+        if (response.ok) {
+            submitBtn.textContent = "Message envoyé !";
+            document.querySelector('.formulaire').reset();
+            setTimeout(() => { submitBtn.textContent = "Envoyer"; }, 3000);
+        } else {
+            submitBtn.textContent = "Erreur, réessaie";
+        }
+    } catch (error) {
+        console.error('Erreur:', error);
+        submitBtn.textContent = "Erreur de connexion";
+    }
+});
+</script>
 </body>
 </html>

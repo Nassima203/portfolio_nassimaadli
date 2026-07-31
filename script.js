@@ -57,4 +57,3 @@ document.addEventListener('DOMContentLoaded', () => {
         if (loadingScreen) loadingScreen.style.display = 'none';
     }
 });
-
