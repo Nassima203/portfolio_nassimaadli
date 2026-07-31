@@ -58,10 +58,3 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 });
 
-const response = await fetch('https://hook.eu1.make.com/2j6oxq2o9l2cnywosw4ajq03rknuxu7a', {
-    method: 'POST',
-    headers: {
-        'Content-Type': 'application/json'
-    },
-    body: JSON.stringify({ email: email, message: message })
-});
